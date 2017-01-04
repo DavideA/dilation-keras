@@ -53,6 +53,9 @@ def get_dilation_model_cityscapes(input_dim, output_dim, weights_file=None):
     h = Convolution2D(19, 3, 3, activation='relu', name='ctx_fc1')(h)
     h = Convolution2D(19, 1, 1, activation='relu', name='ctx_final')(h)
 
+    # the following two layers pretend to be a Deconvolution with grouping layer.
+    # never managed to implement it in Keras
+    # since it's just a gaussian upsampling trainable=False is recommended
     h = UpSampling2D(size=(8, 8))(h)
     h = Convolution2D(19, 16, 16, border_mode='same', bias=False, trainable=False, name='ctx_upsample')(h)
 
