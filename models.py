@@ -51,7 +51,7 @@ def get_dilation_model_cityscapes(input_dim, output_dim, weights_file=None):
     h = AtrousConvolution2D(19, 3, 3, atrous_rate=(64, 64), activation='relu', name='ctx_conv7_1')(h)
     h = ZeroPadding2D(padding=(1, 1))(h)
     h = Convolution2D(19, 3, 3, activation='relu', name='ctx_fc1')(h)
-    h = Convolution2D(19, 1, 1, activation='relu', name='ctx_final')(h)
+    h = Convolution2D(19, 1, 1, name='ctx_final')(h)
 
     # the following two layers pretend to be a Deconvolution with grouping layer.
     # never managed to implement it in Keras
@@ -108,7 +108,7 @@ def get_dilation_model_voc(input_dim, output_dim, weights_file=None):
     h = AtrousConvolution2D(336, 3, 3, atrous_rate=(8, 8), activation='relu', name='ct_conv4_1')(h)
     h = AtrousConvolution2D(672, 3, 3, atrous_rate=(16, 16), activation='relu', name='ct_conv5_1')(h)
     h = Convolution2D(672, 3, 3, activation='relu', name='ct_fc1')(h)
-    h = Convolution2D(21, 1, 1, activation='relu', name='ct_final')(h)
+    h = Convolution2D(21, 1, 1, name='ct_final')(h)
 
     h = Permute((2, 3, 1))(h)
     h = Reshape((h_out * w_out, 21))(h)
