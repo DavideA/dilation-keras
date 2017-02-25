@@ -1,9 +1,0 @@
-You can find the weights for the models at the following urls:
-
-http://imagelab.ing.unimore.it/files/dilation_keras/cityscapes.h5
-http://imagelab.ing.unimore.it/files/dilation_keras/voc12.h5
-http://imagelab.ing.unimore.it/files/dilation_keras/kitti.h5
-http://imagelab.ing.unimore.it/files/dilation_keras/camvid.h5
-
-
-Just place the h5 files in the weights folder.
