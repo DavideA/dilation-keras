@@ -3,8 +3,10 @@ import numpy as np
 # configuration for different datasets
 CONFIG = {
     'cityscapes': {
-        'weights_file': 'weights/cityscapes.h5',
-        'input_dim': (1396, 1396),
+        'classes': 19,
+        'weights_file': 'dilation_cityscapes.h5',
+        'weights_url': 'http://imagelab.ing.unimore.it/files/dilation_keras/cityscapes.h5',
+        'input_shape': (3, 1396, 1396),
         'test_image': 'imgs_test/cityscapes.png',
         'mean_pixel': (72.39, 82.91, 73.16),
         'palette': np.array([[128, 64, 128],
@@ -30,8 +32,10 @@ CONFIG = {
         'conv_margin': 186
     },
     'voc12': {
-        'weights_file': 'weights/voc12.h5',
-        'input_dim': (900, 900),
+        'classes': 21,
+        'weights_file': 'dilation_voc12.h5',
+        'weights_url': 'http://imagelab.ing.unimore.it/files/dilation_keras/voc12.h5',
+        'input_shape': (3, 900, 900),
         'test_image': 'imgs_test/voc.jpg',
         'mean_pixel': (102.93, 111.36, 116.52),
         'palette': np.array([[0, 0, 0],
@@ -59,8 +63,10 @@ CONFIG = {
         'conv_margin': 186
     },
     'kitti': {
-        'weights_file': 'weights/kitti.h5',
-        'input_dim': (852, 1640),
+        'classes': 11,
+        'weights_file': 'dilation_kitti.h5',
+        'weights_url': 'http://imagelab.ing.unimore.it/files/dilation_keras/kitti.h5',
+        'input_shape': (3, 852, 1640),
         'test_image': 'imgs_test/kitti.png',
         'mean_pixel': (96.19, 95.55, 91.34),
         'palette': np.array([[128, 0, 0],
@@ -78,8 +84,10 @@ CONFIG = {
         'conv_margin': 186
     },
     'camvid': {
-        'weights_file': 'weights/camvid.h5',
-        'input_dim': (900, 1100),
+        'classes': 11,
+        'weights_file': 'dilation_camvid.h5',
+        'weights_url': 'http://imagelab.ing.unimore.it/files/dilation_keras/camvid.h5',
+        'input_shape': (3, 900, 1100),
         'test_image': 'imgs_test/camvid.png',
         'mean_pixel': (110.70, 108.77, 105.41),
         'palette': np.array([[128, 0, 0],
