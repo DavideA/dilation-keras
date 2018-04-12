@@ -11,3 +11,5 @@ Tensorflow backend should since if needed, the function `convert_all_kernels_in_
 However, it is not tested.
 
 **Cityscapes model disclaimer:** I didn't manage to convert the final upsampling layer (deconv with grouping), so I replaced it with Upsampling + Convolution.
+
+[Check the same network in Tensorflow.](https://github.com/ndrplz/dilation-tensorflow)
